@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import TaskItem from './TaskItem'
 class TaskList extends Component {
   render() {
+    var {tasks}=this.props;
+    var element=tasks.map((task,index)=>{
+      return <TaskItem key={task.id} task={task}/>
+    })
     return (
         <table className="table table-bordered table-hover">
         <thead>
@@ -37,9 +41,7 @@ class TaskList extends Component {
             </td>
             <td></td>
           </tr>
-            <TaskItem/>
-            <TaskItem/>
-            <TaskItem/>
+            {element}
         </tbody>
       </table>
     );

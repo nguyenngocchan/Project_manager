@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 class TaskItem extends Component {
   render() {
+    var {task}=this.props;
     return (
     <tr>
-        <td>1</td>
-        <td>Học reactjs</td>
+        <td>{task.id}</td>
+        <td>{task.name}</td>
         <td>
-        <span className="label label-success">Kích hoạt</span>
+        <span className={task.status===true?"label label-success":"label label-danger"}>
+        {task.status===true?'Kich hoat':'An'}</span>
         </td>
         <td> 
           <button type="button" className="btn btn-warning">
