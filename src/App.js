@@ -4,6 +4,12 @@ import TaskForm from "./components/TaskForm"
 import Controls from "./components/Controls"
 import TaskList from "./components/TaskList"
 class App extends Component {
+  constructor(props){
+    super(props);
+    this.state={
+      tasks:''
+    }
+  }
   render() {
     return (
       <div>
