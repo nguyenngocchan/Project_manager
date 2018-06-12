@@ -22,9 +22,16 @@ class TaskForm extends Component {
   onSubmit=(e)=>{
     e.preventDefault();
     this.props.onReceiveValueAdd(this.state);
+    this.onCancel();
+    this.onClose();
 
   }
-  
+  onCancel=()=>{
+    this.setState({
+      name:'',
+      status:false
+    })
+  }
   onClose=()=>{
     this.props.onCloseReceive();
   };
@@ -62,7 +69,7 @@ class TaskForm extends Component {
               <span className="fa fa-plus pr-5" />
               Lưu lại
             </button>&nbsp;
-            <button type="submit" className="btn btn-warning">
+            <button type="submit" className="btn btn-warning" onClick={this.onCancel}>
               <span className="fa fa-times pr-5" />
               Hủy bỏ
             </button>

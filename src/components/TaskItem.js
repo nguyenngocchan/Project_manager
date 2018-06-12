@@ -3,7 +3,7 @@ class TaskItem extends Component {
   render() {
     var {task}=this.props;
     return (
-    <tr>
+    <tr key={task.id}>
         <td>{task.id}</td>
         <td>{task.name}</td>
         <td>
