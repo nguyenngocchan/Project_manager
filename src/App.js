@@ -27,6 +27,12 @@ class App extends Component {
       isDisplayForm:true
     }
   }
+  componentWillMount(){
+    var tasks=JSON.parse(localStorage.getItem('tasks'));
+    this.setState({
+      tasks:tasks
+    })
+  }
   onDisplayForm=()=>{
     this.setState({
       isDisplayForm:!this.state.isDisplayForm
@@ -48,7 +54,7 @@ class App extends Component {
     this.setState({
       tasks:tasks
     })
-    localStorage.setItem("tasks",JSON.stringify(tasks));
+    localStorage.setItem("tasks",JSON.stringify(tasks)); 
   }
   render() {
     var {tasks,isDisplayForm}=this.state;
